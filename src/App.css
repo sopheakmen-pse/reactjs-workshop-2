@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gradient-heading {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #e67d0d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-list {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-list-item {
+  display: flex;
+  gap: 0.5rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 1px solid #f2f2f2;
+  padding: 0.5rem 1rem;
+}
+
+.todo-list-item:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.todo-list-item label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.btn {
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 70px;
+}
+
+.btn-add {
+  background-color: rgb(109, 129, 245);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-add:hover {
+  background-color: rgb(6, 51, 200);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-delete {
+  background-color: rgb(245, 109, 109);
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: rgb(200, 6, 6);
+}
+
+.form-add-task {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-add-task input {
+  flex: 1;
+  border: 1px solid #e6e6e6;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #f2f2f2;
 }
