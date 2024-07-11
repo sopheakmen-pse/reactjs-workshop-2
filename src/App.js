@@ -1,35 +1,28 @@
 import "./App.css";
+import Heading from "./components/Heading";
+import AddTaskForm from "./components/AddTaskForm";
+import TaskListItem from "./components/TaskListItem";
 
 function App() {
+  const tasks = [
+    { id: 1, taskName: "Task 1", done: false },
+    { id: 2, taskName: "Task 2", done: false },
+    { id: 3, taskName: "Task 3", done: true },
+  ];
+  console.log(tasks);
+
+  const components = tasks.map((task) => <TaskListItem task={task} />);
+  console.log(components);
+
   return (
     <div class="container">
-      <h1 className="gradient-heading">To-Do List</h1>
-
-      <form className="form-add-task">
-        <input type="text" placeholder="Add a task" />
-        <button className="btn btn-add" type="submit">
-          Add
-        </button>
-      </form>
+      <Heading />
+      <AddTaskForm />
 
       <div className="todo-list">
-        <div className="todo-list-item">
-          <input type="checkbox" id="task1" />
-          <label for="task1">Task 1</label>
-          <button className="btn btn-delete">Delete</button>
-        </div>
-
-        <div className="todo-list-item">
-          <input type="checkbox" id="task2" />
-          <label for="task2">Task 2</label>
-          <button className="btn btn-delete">Delete</button>
-        </div>
-
-        <div className="todo-list-item">
-          <input type="checkbox" id="task3" />
-          <label for="task3">Task 3</label>
-          <button className="btn btn-delete">Delete</button>
-        </div>
+        <TaskListItem task={tasks[0]} />
+        <TaskListItem task={tasks[1]} />
+        <TaskListItem task={tasks[2]} />
       </div>
     </div>
   );
